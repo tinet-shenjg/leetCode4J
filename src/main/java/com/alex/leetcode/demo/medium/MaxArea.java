@@ -12,7 +12,7 @@ package com.alex.leetcode.demo.medium;
  * @date 2020/04/10
  */
 public class MaxArea {
-    
+
     /**
      * 计算最大容量
      *
@@ -29,7 +29,7 @@ public class MaxArea {
         int right = height.length - 1;
 
         // 指针第一次相遇为终结点
-        while (left <= right - 1) {
+        while (left < right) {
             // 计算当前的最大容量
             maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * (right - left));
 
