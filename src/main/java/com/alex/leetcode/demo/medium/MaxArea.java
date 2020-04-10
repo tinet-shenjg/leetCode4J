@@ -43,8 +43,19 @@ public class MaxArea {
         return maxArea;
     }
 
+    public static int maxArea2(int[] height) {
+        int maxarea = 0;
+        for (int m = 0; m < height.length; m++) {
+            for (int n = m + 1; n < height.length; n++) {
+                maxarea = Math.max(maxarea, Math.min(height[m], height[n]) * (n - m));
+            }
+        }
+        return maxarea;
+    }
+
     public static void main(String[] args) {
         int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
         System.out.println(maxArea(height));
+        System.out.println(maxArea2(height));
     }
 }
